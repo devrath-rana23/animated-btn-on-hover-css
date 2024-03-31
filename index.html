@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main {
+            background: blue;
+            height: 50vh;
+            position: relative;
+        }
+
+        .btn-container {
+            position: absolute;
+            top: 50%;
+            left: 41%;
+            transform: translateY(-50%);
+            background: white;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 169px;
+            height: 43px;
+            cursor: pointer;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 2px solid transparent;
+            background: blue;
+            color: white;
+            cursor: pointer;
+            position: relative;
+            text-align: center;
+            width: calc(100% - 4px);
+        }
+
+        .btn-container:hover {
+            transition: width 1s ease;
+            width: calc(165px + 50px);
+            background: linear-gradient(115deg, #4fcf70, #fad648, #a767e5, #12bcfe, #44ce7b);
+            animation: slidebg 1s linear infinite;
+        }
+
+        .btn-container:hover .btn {
+            text-align: left;
+            background: blue;
+        }
+
+        .btn-container:hover .arrow-container {
+            opacity: 1;
+        }
+
+        .arrow-container {
+            position: absolute;
+            height: 43px;
+            top: -4px;
+            right: -4px;
+            border-radius: 50%;
+            aspect-ratio: 1/1;
+            opacity: 0;
+            overflow: hidden;
+        }
+
+        .arrow-bg {
+            background: linear-gradient(115deg, #4fcf70, #fad648, #a767e5, #12bcfe, #44ce7b);
+            animation: slidebg 1s linear infinite;
+            position: absolute;
+            width: 215px;
+            height: 100%;
+            right: 0;
+        }
+
+        .arrow {
+            height: 40px;
+            border-radius: 50%;
+            background: blue;
+            display: block;
+            position: relative;
+            right: -2px;
+            top: 1.8px;
+            aspect-ratio: 1 / 1;
+
+        }
+
+        .arrow::after {
+            content: "->";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .social-banner {
+            background: green;
+            position: absolute;
+            height: 100px;
+            width: 50%;
+            bottom: -43px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: space-between;
+            border-radius: 20px;
+            align-items: center;
+            padding: 0 25px;
+        }
+
+        .social-banner img{
+            height: 50px;
+            aspect-ratio: 1 / 1;
+        }
+
+        @keyframes slidebg {
+            to {
+                background-position: 215px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="btn-container">
+            <button class="btn">
+                <span class="btn-text">Lorem ipsum is here</span>
+                <div class="arrow-container">
+                    <span class="arrow-bg"></span>
+                    <span class="arrow"></span>
+                </div>
+            </button>
+        </div>
+        <div class="social-banner">
+            <img src="https://i.postimg.cc/L65nyYC1/Group-2.png" alt="brand-logo" />
+            <img src="https://i.postimg.cc/L65nyYC1/Group-2.png" alt="brand-logo" />
+            <img src="https://i.postimg.cc/L65nyYC1/Group-2.png" alt="brand-logo" />
+        </div>
+    </main>
+    <script>
+        // Script to make button more responsive on hover state
+        // const btnElementContaner = document.querySelector(".btn-container")
+        // const btnElement = document.querySelector(".btn")
+        // const rect = btnElement.getBoundingClientRect();
+        // const btnWidth = rect.width
+        // const btnHeight = rect.height
+        // btnElement.style.width = `${btnWidth}px`
+        // btnElementContaner.style.width = `${btnWidth + 4}px`
+        // btnElementContaner.addEventListener("mouseover", () => {
+        //     btnElementContaner.style.width = `${btnWidth + 50}px`
+        // })
+        // btnElement.addEventListener("mouseout", () => {
+        //     btnElement.style.width = `${btnWidth}px`
+        // })
+    </script>
+</body>
+
+</html>
